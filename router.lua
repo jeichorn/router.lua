@@ -34,7 +34,7 @@ local WILDCARD_BYTE = string.byte('*', 1)
 local HTTP_METHODS = {'get', 'post', 'put', 'patch', 'delete', 'trace', 'connect', 'options', 'head'}
 
 local function match_one_path(node, path, f)
-  for token in path:gmatch("[^/.]+") do
+  for token in path:gmatch("[^/]+") do
     node[token] = node[token] or {}
     node = node[token]
   end
