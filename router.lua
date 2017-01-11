@@ -42,7 +42,7 @@ local function match_one_path(node, path, f)
 end
 
 local function resolve(path, node, params)
-  local _, _, current_token, rest = path:find("([^/.]+)(.*)")
+  local _, _, current_token, rest = path:find("([^/]+)(.*)")
   if not current_token then return node["LEAF"], params end
 
   for child_token, child_node in pairs(node) do
